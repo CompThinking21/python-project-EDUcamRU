@@ -1,6 +1,9 @@
 #Cameron Simms
 #Started Working on This 10/21/21
+#This will output the user's carbon footprint. The majority of it is something they cannot affect themeselves and it static
+#This static value of 13000 will be the focus, and the rest of the project will demonstrate how insignificant their personal output is
 Footprint = 0
+#A loop that asks the user a series of questions to calculate carbon footprint
 class ClimateQuery:
     def __init__(self, question, answer, carbonvalue):
         self.question = question
@@ -19,7 +22,7 @@ class ClimateQuery:
             print(' ')
             pass
 
-# qtemplate: q = ClimateQuery('', [''], [])
+# qtemplate: q = ClimateQuery('', [''], []) THe template for all the questions
 q_1 = ClimateQuery('commute by', ['walking', 'biking', 'driving', 'public transit', 'carpooling'], [0, 0, 1115, 131, 459])
 q_2 = ClimateQuery('eat mostly', ['fast food', 'home cooked meals'], [4818, 629])
 q_3 = ClimateQuery('eat mostly', ['vegetables/fruit', 'meat', 'breads'], [153, 644, 364])
