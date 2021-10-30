@@ -18,6 +18,10 @@ class ClimateQuery:
                 print(mchoice[0 + loopnum] + ': ' + self.answer[0 + loopnum])
                 loopnum = loopnum + 1
             useranswer = input("Choose The Number That Applies to You: ")
+            if int(useranswer) in range(1, len(self.carbonvalue)):
+                pass
+            else:
+                raise Exception("use one of the numbers on the screen doofus")
             Footprint += self.carbonvalue[int(useranswer) - 1]
             print(' ')
             pass
