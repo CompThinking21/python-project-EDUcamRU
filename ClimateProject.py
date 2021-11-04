@@ -12,17 +12,20 @@ class ClimateQuery:
     def mquery(self):
             global Footprint
             loopnum = 0
-            mchoice = ['1', '2', '3', '4', '5']
+            useranswer = 0
+            mchoice = range(1, len(self.answer))
             print('Do you ' + self.question)
             for item in self.answer:
-                print(mchoice[0 + loopnum] + ': ' + self.answer[0 + loopnum])
+                print(mchoice[loopnum] + ': ' + self.answer[loopnum])
                 loopnum = loopnum + 1
+#This while loop adds resiliency so the code does not instantly break if the user messes up
             useranswer = input("Choose The Number That Applies to You: ")
-            if int(useranswer) in range(1, len(self.carbonvalue)):
-                pass
+            if useranswer in range(1, len(self.carbonvalue)):
+                Footprint += self.carbonvalue[useranswer - 1]
             else:
-                raise Exception("use one of the numbers on the screen doofus")
-            Footprint += self.carbonvalue[int(useranswer) - 1]
+                print("Sorry, that answer does not work, try again")
+                self.mquery()
+
             print(' ')
             pass
 
@@ -42,4 +45,4 @@ loop = 0
 for element in qList:
     qList[loop].mquery()
     loop = loop + 1
-print('Your Carbon Footprint is ' + str(Footprint + 13000) + ' pounds of CO2 a year')
+print('Your Carbon Footprint is ' + str(Footprint + 22000) + ' pounds of CO2 a year')
