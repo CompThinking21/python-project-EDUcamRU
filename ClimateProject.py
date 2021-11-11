@@ -10,16 +10,18 @@ class ClimateQuery:
         self.answer = answer
         self.carbonvalue = carbonvalue
     def mquery(self):
+            print("I'm at the beginning of mquery")
             global Footprint
             loopnum = 0
             useranswer = 0
             mchoice = range(1, len(self.answer))
             print('Do you ' + self.question)
             for item in self.answer:
-                print(mchoice[loopnum] + ': ' + self.answer[loopnum])
+                print(str(mchoice[loopnum]) + ': ' + self.answer[loopnum])
                 loopnum = loopnum + 1
 #This while loop adds resiliency so the code does not instantly break if the user messes up
             useranswer = input("Choose The Number That Applies to You: ")
+            print("After user answer.")
             if useranswer in range(1, len(self.carbonvalue)):
                 Footprint += self.carbonvalue[useranswer - 1]
             else:
