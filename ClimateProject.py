@@ -10,27 +10,22 @@ class ClimateQuery:
         self.answer = answer
         self.carbonvalue = carbonvalue
     def mquery(self):
-            print("I'm at the beginning of mquery")
             global Footprint
             loopnum = 0
-            useranswer = 0
-            mchoice = range(1, len(self.answer))
+            mchoice = ['1', '2', '3', '4', '5']
             print('Do you ' + self.question)
             for item in self.answer:
-                print(str(mchoice[loopnum]) + ': ' + self.answer[loopnum])
+                print(mchoice[0 + loopnum] + ': ' + self.answer[0 + loopnum])
                 loopnum = loopnum + 1
-#This while loop adds resiliency so the code does not instantly break if the user messes up
             useranswer = input("Choose The Number That Applies to You: ")
-            print("After user answer.")
-            if useranswer in range(1, len(self.carbonvalue)):
-                Footprint += self.carbonvalue[useranswer - 1]
+            if int(useranswer) in range(1, len(self.answer)):
+                pass
             else:
-                print("Sorry, that answer does not work, try again")
+                print('Not a Valid Answer, try again')
                 self.mquery()
-
+            Footprint += self.carbonvalue[int(useranswer) - 1]
             print(' ')
             pass
-
 # qtemplate: q = ClimateQuery('', [''], []) THe template for all the questions
 q_1 = ClimateQuery('commute by', ['walking', 'biking', 'driving', 'public transit', 'carpooling'], [0, 0, 1115, 131, 459])
 q_2 = ClimateQuery('eat mostly', ['fast food', 'home cooked meals'], [4818, 629])
