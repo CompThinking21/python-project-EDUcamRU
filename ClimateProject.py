@@ -19,7 +19,7 @@ class ClimateQuery:
                 print(mchoice[0 + loopnum] + ': ' + self.answer[0 + loopnum])
                 loopnum = loopnum + 1
             useranswer = input("Choose The Number That Applies to You: ")
-            if int(useranswer) in range(1, len(self.answer)):
+            if int(useranswer) in range(1, len(self.answer) + 1):
                 pass
             else:
                 print('Not a Valid Answer, try again')
