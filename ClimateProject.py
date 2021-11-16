@@ -9,6 +9,7 @@ class ClimateQuery:
         self.question = question
         self.answer = answer
         self.carbonvalue = carbonvalue
+        #mquery generates a question based off the
     def mquery(self):
             global Footprint
             loopnum = 0
