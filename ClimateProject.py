@@ -4,6 +4,7 @@
 #This static value of 13000 will be the focus, and the rest of the project will demonstrate how insignificant their personal output is
 Footprint = 0
 import time
+import turtle
 #A loop that asks the user a series of questions to calculate carbon footprint
 class ClimateQuery:
     def __init__(self, question, answer, carbonvalue):
@@ -59,6 +60,22 @@ print('of the ' + str(Footprint + 22000) + ' pounds of CO2 you generated')
 time.sleep(4)
 print('You can only control rougly ' + str(Footprint) + ' pounds of it')
 time.sleep(6)
-print('Who should be held accountble for the CO2 that is generated?')
-time.sleep(5)
-print('END')
+print('A New Window Will open showing an arrow moving around a square')
+time.sleep(3)
+print('Every time this arrow rounds a corner, it represents all the emissions you will ever output in your life')
+time.sleep(2)
+print('The global energy sector outputs the same amount of emissions that you output in your life time')
+print('in the same amount of time it takes from the arrow to move from one side of the square to another')
+time.sleep(1)
+print('new window opening')
+time.sleep(3)
+#Visualiation showing the user's carbon output. Every time the arrow hits a corner it represents their entire lifetime of carbon output
+#And the same amount of carbon output in the same time it takes the arrow to reach one side of the square to another
+t = turtle.Turtle()
+while (loop < 999):
+    t.fillcolor('blue')
+    t.begin_fill()
+    for i in range(4):
+        t.forward(150)
+        t.right(90)
+t.end_fill()
